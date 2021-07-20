@@ -1,5 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,6 +10,16 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      //TODO: add appbar here
+
+      body: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints){
+          //TODO: add responsive layout here
+          return Container();
+        }
+      )
+
+    );
   }
 }
