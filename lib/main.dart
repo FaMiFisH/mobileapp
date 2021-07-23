@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'interfaces/home.dart';
 import 'interfaces/register.dart';
-import 'interfaces/login.dart';
+import 'interfaces/LoginScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,13 +11,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,  //turn debug banner off
-      // initialise routes
+      debugShowCheckedModeBanner: false,
+
+      title: "A-level Coursework",
+      theme: ThemeData(
+        primaryColor: Colors.lightBlue[200],
+        accentColor: Colors.blue[600],
+        hintColor: Colors.grey,
+
+        fontFamily: "Montserrat",
+        textTheme: TextTheme()
+
+        //TODO: set dark theme and padding??
+
+      ),
       routes: <String, WidgetBuilder> {
-        "RegisterPage": (BuildContext context) => new RegisterPage(),
-        "HomePage": (BuildContext context) => new HomePage()
+        "Register": (BuildContext context) => new RegisterScreen(),
+        "Home": (BuildContext context) => new HomePage()
       },
-      home: LoginPage()
+      home: LoginScreen()
     );
   }
 }
