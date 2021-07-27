@@ -70,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Column(children: <Widget>[
                   TextFormField(
                     decoration: InputDecoration(
-                      labelText: "EMAIL",
+                      labelText: "Email",
                       labelStyle: TextStyle(color: Theme.of(context).hintColor),
                       focusedBorder: UnderlineInputBorder(
                           borderSide:
@@ -83,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   TextFormField(
                     controller: passController,
                     decoration: InputDecoration(
-                        labelText: "PASSWORD",
+                        labelText: "Password",
                         labelStyle:
                             TextStyle(color: Theme.of(context).hintColor),
                         focusedBorder: UnderlineInputBorder(
