@@ -20,11 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
   // initialising text field controllers
   // used to retrieve values of the text fields
   var passController = TextEditingController();
-
-  // checks whether the text field of the given controller is empty
-  bool isTextFieldEmpty(controller) {
-    return passController.text.isEmpty;
-  }
+  var emailController = TextEditingController();
 
   @override
   void initState() {
@@ -34,12 +30,16 @@ class _LoginScreenState extends State<LoginScreen> {
     passController.addListener(() {
       setState(() {});
     });
+    emailController.addListener(() {
+      setState(() {});
+    });
   }
 
   @override
   void dispose() {
     // clean the controllers when the widget is removed from the widget tree
     passController.dispose();
+    emailController.dispose();
 
     super.dispose();
   }
@@ -69,15 +69,23 @@ class _LoginScreenState extends State<LoginScreen> {
                     //padding: EdgeInsets.fromLTRB(20.0, 32.0, 20.0, 0.0),
                     child: Column(children: <Widget>[
                   TextFormField(
+                    controller: emailController,
                     decoration: InputDecoration(
-                      labelText: "Email",
-                      labelStyle: TextStyle(color: Theme.of(context).hintColor),
-                      focusedBorder: UnderlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Theme.of(context).accentColor)),
-                      prefixIcon: Icon(Icons.email,
-                          color: Theme.of(context).accentColor),
-                    ),
+                        labelText: "Email",
+                        labelStyle:
+                            TextStyle(color: Theme.of(context).hintColor),
+                        focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Theme.of(context).accentColor)),
+                        prefixIcon: Icon(Icons.email,
+                            color: Theme.of(context).accentColor),
+                        suffixIcon: emailController.text.isNotEmpty
+                            ? IconButton(
+                                icon: Icon(Icons.clear,
+                                    color: Theme.of(context).accentColor),
+                                onPressed: () => {emailController.clear()},
+                              )
+                            : SizedBox.shrink()),
                   ),
                   SizedBox(height: 8.0),
                   TextFormField(
