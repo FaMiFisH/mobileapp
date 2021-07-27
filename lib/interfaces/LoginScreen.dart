@@ -75,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       focusedBorder: UnderlineInputBorder(
                           borderSide:
                               BorderSide(color: Theme.of(context).accentColor)),
-                      prefixIcon: Icon(Icons.person,
+                      prefixIcon: Icon(Icons.email,
                           color: Theme.of(context).accentColor),
                     ),
                   ),
