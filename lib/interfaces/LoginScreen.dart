@@ -159,14 +159,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text("Don't have an account?",
-                            style: TextStyle(fontFamily: "Montserrat")),
+                        Text("Don't have an account?"),
                         SizedBox(width: 5.0),
                         InkWell(
                             onTap: () {
                               Navigator.of(context).pushNamed("Register");
                             },
-                            child: Text("Register now",
+                            child: Text("Register",
                                 style: TextStyle(
                                     color: Theme.of(context).accentColor,
                                     fontWeight: FontWeight.bold,
