@@ -102,21 +102,22 @@ class _LoginScreenState extends State<LoginScreen> {
                         suffixIcon: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           mainAxisSize: MainAxisSize.min,
-                          children: [
-                            passController.text.isNotEmpty
-                                ? IconButton(
-                                    icon: Icon(Icons.clear),
-                                    onPressed: () => {passController.clear()})
-                                : SizedBox.shrink(),
-                            IconButton(
-                                icon: Icon(
-                                  hidePass
-                                      ? Icons.visibility_off
-                                      : Icons.visibility,
-                                  color: Theme.of(context).accentColor,
-                                ),
-                                onPressed: () => toggleVisibility()),
-                          ],
+                          children: passController.text.isNotEmpty
+                              ? [
+                                  IconButton(
+                                      icon: Icon(Icons.clear),
+                                      onPressed: () =>
+                                          {passController.clear()}),
+                                  IconButton(
+                                      icon: Icon(
+                                        hidePass
+                                            ? Icons.visibility_off
+                                            : Icons.visibility,
+                                        color: Theme.of(context).accentColor,
+                                      ),
+                                      onPressed: () => toggleVisibility()),
+                                ]
+                              : [],
                         )),
                     obscureText: hidePass,
                     enableSuggestions: false,
