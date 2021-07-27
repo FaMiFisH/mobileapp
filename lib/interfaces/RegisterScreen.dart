@@ -189,24 +189,43 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           autocorrect: false,
                         ),
                       ),
-                      SizedBox(height: 8.0),
-                      Container(),
-                      SizedBox(height: 12.0),
+                      SizedBox(height: 48.0),
                       Container(
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                            Text("Already have an account?"),
-                            InkWell(
-                                onTap: () {
-                                  Navigator.of(context).pop();
-                                },
-                                child: Text("Login",
-                                    style: TextStyle(
-                                        color: Colors.lightBlue,
-                                        fontWeight: FontWeight.bold,
-                                        decoration: TextDecoration.underline)))
-                          ]))
+                          child: Column(children: <Widget>[
+                        Container(
+                            height: 40.0,
+                            padding: EdgeInsets.fromLTRB(12.0, 0.0, 12.0, 0.0),
+                            child: Material(
+                                borderRadius: BorderRadius.circular(20.0),
+                                shadowColor: Theme.of(context).shadowColor,
+                                color: Theme.of(context).accentColor,
+                                elevation: 7.0,
+                                child: GestureDetector(
+                                    onTap: () {},
+                                    child: Center(
+                                      child: Text("Register",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold)),
+                                    )))),
+                        SizedBox(height: 12.0),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text("Already have an account?"),
+                              SizedBox(width: 5.0),
+                              InkWell(
+                                  onTap: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: Text("Login",
+                                      style: TextStyle(
+                                          color: Colors.lightBlue,
+                                          fontWeight: FontWeight.bold,
+                                          decoration:
+                                              TextDecoration.underline)))
+                            ])
+                      ])),
                     ]),
               ),
             )));
