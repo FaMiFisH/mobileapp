@@ -32,29 +32,31 @@ class MyThemes {
   ///-light theme--------------------------------
   ///
   static final lightThemeData = ThemeData(
-    brightness: Brightness.light,
+      brightness: Brightness.light,
 
-    /// colors
-    colorScheme: ColorScheme.light(),
-    canvasColor: backgroundL,
-    primaryColorLight: primaryL,
-    primaryColorDark: secondaryL,
-    accentColor: accentL,
-    cardColor: secondaryL,
-    hintColor: Colors.grey[700],
-    shadowColor: Colors.white,
-    errorColor: Color(0xFFFF0033),
-    toggleableActiveColor: accentL,
+      /// colors
+      colorScheme: ColorScheme.light(),
+      canvasColor: backgroundL,
+      primaryColorLight: primaryL,
+      primaryColorDark: secondaryL,
+      accentColor: accentL,
+      cardColor: secondaryL,
+      hintColor: Colors.grey[700],
+      shadowColor: Colors.white,
+      errorColor: Color(0xFFFF0033),
+      toggleableActiveColor: accentL,
 
-    /// font
-    fontFamily: "Montserrat",
+      /// font
+      fontFamily: "Montserrat",
 
-    /// text
-    textTheme: GetThemes.getTextTheme(accentL, secondaryL, backgroundL),
+      /// text
+      textTheme: GetThemes.getTextTheme(accentL, secondaryL, backgroundL),
 
-    /// buttons
-    elevatedButtonTheme: GetThemes.getElevatedBtnTheme(accentL, Colors.white),
-  );
+      /// buttons
+      elevatedButtonTheme: GetThemes.getElevatedBtnTheme(accentL, Colors.white),
+
+      /// appbar
+      appBarTheme: GetThemes.getAppBarTheme(Colors.white, secondaryL));
 
   ///-Dark theme------------------------------------------------
   ///

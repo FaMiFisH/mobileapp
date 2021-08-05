@@ -40,4 +40,13 @@ class GetThemes {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(24))),
       );
+
+  static AppBarTheme getAppBarTheme(backgroundColor, secondaryColor) =>
+      AppBarTheme(
+        backgroundColor: backgroundColor,
+        elevation: 2,
+        iconTheme: null,
+        actionsIconTheme: null,
+        textTheme: null,
+      );
 }

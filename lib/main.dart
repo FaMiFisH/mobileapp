@@ -1,10 +1,11 @@
 import 'package:alevelcoursework/themes/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'interfaces/HomeScreen.dart';
-import 'interfaces/RegisterScreen.dart';
-import 'interfaces/LoginScreen.dart';
+import 'interfaces/screens/home/main.dart';
+import 'interfaces/screens/register/main.dart';
 import 'package:provider/provider.dart';
+
+import 'interfaces/screens/login/main.dart';
 
 void main() async {
   runApp(new MyApp());
@@ -23,10 +24,10 @@ class MyApp extends StatelessWidget {
             theme: MyThemes.lightThemeData,
             darkTheme: MyThemes.darkThemeData,
             routes: <String, WidgetBuilder>{
-              "Login": (BuildContext context) => new LoginScreen(),
-              "Register": (BuildContext context) => new RegisterScreen(),
-              "Home": (BuildContext context) => new HomePage()
+              "Login": (BuildContext context) => new LoginMain(),
+              "Register": (BuildContext context) => new RegisterMain(),
+              "Home": (BuildContext context) => new HomeMain()
             },
-            home: LoginScreen());
+            home: LoginMain());
       });
 }

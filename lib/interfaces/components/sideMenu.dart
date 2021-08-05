@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Menu extends StatefulWidget {
+class SideMenu extends StatefulWidget {
   @override
-  _MenuState createState() => _MenuState();
+  _SideMenuState createState() => _SideMenuState();
 }
 
-class _MenuState extends State<Menu> {
+class _SideMenuState extends State<SideMenu> {
   @override
   Widget build(BuildContext context) {
     return Container();

@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'HomeScreen.dart';
+import '../home/main.dart';
 
-class RegisterScreen extends StatefulWidget {
+class RegisterMain extends StatefulWidget {
   @override
-  _RegisterScreenState createState() => _RegisterScreenState();
+  _RegisterMainState createState() => _RegisterMainState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _RegisterMainState extends State<RegisterMain> {
   // keep track of pass/confirmPass visibility
   var hidePass = true;
   var hideConfirmPass = true;
@@ -259,7 +259,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     Container(
                                         child: Column(children: <Widget>[
                                       ElevatedButton(
-                                          onPressed: () => runApp(HomePage()),
+                                          onPressed: () => runApp(HomeMain()),
                                           child: Text("Register",
                                               style: Theme.of(context)
                                                   .textTheme

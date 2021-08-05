@@ -2,15 +2,15 @@ import 'package:alevelcoursework/interfaces/components/themeSwitch.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../themes/themes.dart';
-import 'HomeScreen.dart';
+import '../../../themes/themes.dart';
+import '../home/main.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginMain extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _LoginMainState createState() => _LoginMainState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginMainState extends State<LoginMain> {
   // keeps track of password visibility
   var hidePass = true;
 
@@ -194,7 +194,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         child: Column(children: [
                                           ElevatedButton(
                                               onPressed: () =>
-                                                  runApp(HomePage()),
+                                                  runApp(HomeMain()),
                                               child: Text("Login",
                                                   style: Theme.of(context)
                                                       .textTheme
