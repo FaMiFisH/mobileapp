@@ -5,12 +5,12 @@ import 'package:provider/provider.dart';
 import '../../themes/themes.dart';
 import 'home/home.dart';
 
-class LoginMain extends StatefulWidget {
+class LoginPage extends StatefulWidget {
   @override
-  _LoginMainState createState() => _LoginMainState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginMainState extends State<LoginMain> {
+class _LoginPageState extends State<LoginPage> {
   // keeps track of password visibility
   var hidePass = true;
 
@@ -194,7 +194,7 @@ class _LoginMainState extends State<LoginMain> {
                                         child: Column(children: [
                                           ElevatedButton(
                                               onPressed: () =>
-                                                  runApp(HomeMain()),
+                                                  runApp(HomePage()),
                                               child: Text("Login",
                                                   style: Theme.of(context)
                                                       .textTheme

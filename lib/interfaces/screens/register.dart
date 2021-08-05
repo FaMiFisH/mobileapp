@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 import 'home/home.dart';
 
-class RegisterMain extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   @override
-  _RegisterMainState createState() => _RegisterMainState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _RegisterMainState extends State<RegisterMain> {
+class _RegisterPageState extends State<RegisterPage> {
   // keep track of pass/confirmPass visibility
   var hidePass = true;
   var hideConfirmPass = true;
@@ -259,7 +259,7 @@ class _RegisterMainState extends State<RegisterMain> {
                                     Container(
                                         child: Column(children: <Widget>[
                                       ElevatedButton(
-                                          onPressed: () => runApp(HomeMain()),
+                                          onPressed: () => runApp(HomePage()),
                                           child: Text("Register",
                                               style: Theme.of(context)
                                                   .textTheme
