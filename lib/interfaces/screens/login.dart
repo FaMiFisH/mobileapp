@@ -2,8 +2,8 @@ import 'package:alevelcoursework/interfaces/components/themeSwitch.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../themes/themes.dart';
-import '../home/main.dart';
+import '../../themes/themes.dart';
+import 'home/home.dart';
 
 class LoginMain extends StatefulWidget {
   @override

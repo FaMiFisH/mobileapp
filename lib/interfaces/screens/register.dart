@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../home/main.dart';
+import 'home/home.dart';
 
 class RegisterMain extends StatefulWidget {
   @override

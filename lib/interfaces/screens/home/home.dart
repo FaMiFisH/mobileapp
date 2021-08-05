@@ -1,9 +1,10 @@
+import 'package:alevelcoursework/interfaces/components/themeSwitch.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../responsive.dart';
 import '../../../interfaces/components/sideMenu.dart';
-import 'body.dart';
+import 'homeBody.dart';
 
 class HomeMain extends StatefulWidget {
   @override
@@ -22,7 +23,7 @@ class _HomeMainState extends State<HomeMain> {
             appBar: AppBar(
               title: Text("Home page"),
               //backgroundColor: Theme.of(context).canvasColor,
-              //actions: <Widget>[]
+              actions: <Widget>[ThemeSwitch()],
             ),
             body: Row(children: <Widget>[
               Expanded(
@@ -30,7 +31,9 @@ class _HomeMainState extends State<HomeMain> {
                 child: SideMenu(),
               ),
               Expanded(
-                  flex: deviceSize.width > 1000 ? 8 : 10, child: HomeBody())
+                flex: deviceSize.width > 1000 ? 8 : 10,
+                child: HomeBody(),
+              )
             ])));
   }
 }
