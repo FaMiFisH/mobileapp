@@ -60,144 +60,148 @@ class _LoginScreenState extends State<LoginScreen> {
 
     return Scaffold(
       body: SafeArea(
-          child: SingleChildScrollView(
-        child: Padding(
-            padding: const EdgeInsets.all(32.0),
-            child: Center(
-                child: ConstrainedBox(
-                    constraints:
-                        BoxConstraints(maxHeight: 500.0, maxWidth: 350.0),
-                    child: Container(
-                      padding: EdgeInsets.all(20.0),
-                      decoration: BoxDecoration(
-                          color: Theme.of(context).primaryColorLight,
-                          boxShadow: [
-                            BoxShadow(
-                                color: Theme.of(context).shadowColor,
-                                spreadRadius: 1),
-                          ],
-                          borderRadius: BorderRadius.circular(24)),
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Container(
-                                child: Text(
-                              "Login",
-                              style: Theme.of(context).textTheme.headline1,
-                            )),
-                            Container(
-                                child: Column(children: <Widget>[
-                              TextFormField(
-                                controller: emailController,
-                                decoration: InputDecoration(
-                                    labelText: "Email",
-                                    labelStyle: TextStyle(
-                                        color: Theme.of(context).hintColor),
-                                    focusedBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color:
-                                                Theme.of(context).accentColor)),
-                                    prefixIcon: Icon(Icons.email,
-                                        color:
-                                            Theme.of(context).primaryColorDark),
-                                    suffixIcon: emailController.text.isNotEmpty
-                                        ? IconButton(
-                                            icon: Icon(Icons.clear,
-                                                color: Theme.of(context)
-                                                    .primaryColorDark),
-                                            onPressed: () =>
-                                                {emailController.clear()},
-                                          )
-                                        : SizedBox.shrink()),
-                              ),
-                              SizedBox(height: 8.0),
-                              TextFormField(
-                                controller: passController,
-                                decoration: InputDecoration(
-                                    labelText: "Password",
-                                    labelStyle: TextStyle(
-                                        color: Theme.of(context).hintColor),
-                                    focusedBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color:
-                                                Theme.of(context).accentColor)),
-                                    prefixIcon: Icon(Icons.lock,
-                                        color:
-                                            Theme.of(context).primaryColorDark),
-                                    suffixIcon: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: passController.text.isNotEmpty
-                                          ? [
-                                              IconButton(
+          child: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: Center(
+                  child: ConstrainedBox(
+                      constraints:
+                          BoxConstraints(maxHeight: 400.0, maxWidth: 350.0),
+                      child: Container(
+                        padding: EdgeInsets.all(20.0),
+                        decoration: BoxDecoration(
+                            color: Theme.of(context).primaryColorLight,
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Theme.of(context).shadowColor,
+                                  spreadRadius: 1),
+                            ],
+                            borderRadius: BorderRadius.circular(24)),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Container(
+                                  child: Text(
+                                "Login",
+                                style: Theme.of(context).textTheme.headline2,
+                              )),
+                              Container(
+                                  child: Column(children: <Widget>[
+                                TextFormField(
+                                  controller: emailController,
+                                  decoration: InputDecoration(
+                                      labelText: "Email",
+                                      labelStyle: TextStyle(
+                                          color: Theme.of(context).hintColor),
+                                      focusedBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Theme.of(context)
+                                                  .accentColor)),
+                                      prefixIcon: Icon(Icons.email,
+                                          color: Theme.of(context)
+                                              .primaryColorDark),
+                                      suffixIcon:
+                                          emailController.text.isNotEmpty
+                                              ? IconButton(
                                                   icon: Icon(Icons.clear,
                                                       color: Theme.of(context)
                                                           .primaryColorDark),
                                                   onPressed: () =>
-                                                      {passController.clear()}),
-                                              IconButton(
-                                                  icon: Icon(
-                                                    hidePass
-                                                        ? Icons.visibility_off
-                                                        : Icons.visibility,
-                                                    color: Theme.of(context)
-                                                        .primaryColorDark,
-                                                  ),
-                                                  onPressed: () =>
-                                                      toggleVisibility()),
-                                            ]
-                                          : [],
-                                    )),
-                                obscureText: hidePass,
-                                enableSuggestions: false,
-                                autocorrect: false,
-                              ),
-                              SizedBox(height: 8.0),
-                              Container(
-                                  alignment: Alignment(1.0, 0.0),
-                                  padding: EdgeInsets.only(top: 12.0),
-                                  child: InkWell(
-                                      child: Text("Forgot Password?",
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .subtitle2)))
-                            ])),
-                            SizedBox(height: 32.0),
-                            //buttons
-                            Container(
-                              child: Column(children: [
-                                ElevatedButton(
-                                    onPressed: () => runApp(HomePage()),
-                                    child: Text("Login",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .button)),
-                                SizedBox(height: 12.0),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[
-                                    Text("Don't have an account?",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .bodyText2),
-                                    SizedBox(width: 5.0),
-                                    InkWell(
-                                        onTap: () {
-                                          Navigator.of(context)
-                                              .pushNamed("Register");
-                                        },
-                                        child: Text("Register",
+                                                      {emailController.clear()},
+                                                )
+                                              : SizedBox.shrink()),
+                                ),
+                                SizedBox(height: 8.0),
+                                TextFormField(
+                                  controller: passController,
+                                  decoration: InputDecoration(
+                                      labelText: "Password",
+                                      labelStyle: TextStyle(
+                                          color: Theme.of(context).hintColor),
+                                      focusedBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Theme.of(context)
+                                                  .accentColor)),
+                                      prefixIcon: Icon(Icons.lock,
+                                          color: Theme.of(context)
+                                              .primaryColorDark),
+                                      suffixIcon: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: passController.text.isNotEmpty
+                                            ? [
+                                                IconButton(
+                                                    icon: Icon(Icons.clear,
+                                                        color: Theme.of(context)
+                                                            .primaryColorDark),
+                                                    onPressed: () => {
+                                                          passController.clear()
+                                                        }),
+                                                IconButton(
+                                                    icon: Icon(
+                                                      hidePass
+                                                          ? Icons.visibility_off
+                                                          : Icons.visibility,
+                                                      color: Theme.of(context)
+                                                          .primaryColorDark,
+                                                    ),
+                                                    onPressed: () =>
+                                                        toggleVisibility()),
+                                              ]
+                                            : [],
+                                      )),
+                                  obscureText: hidePass,
+                                  enableSuggestions: false,
+                                  autocorrect: false,
+                                ),
+                                SizedBox(height: 8.0),
+                                Container(
+                                    alignment: Alignment(1.0, 0.0),
+                                    padding: EdgeInsets.only(top: 12.0),
+                                    child: InkWell(
+                                        child: Text("Forgot Password?",
                                             style: Theme.of(context)
                                                 .textTheme
-                                                .subtitle2))
-                                  ],
-                                )
-                              ]),
-                            ),
-                          ]),
-                    )))),
+                                                .subtitle2)))
+                              ])),
+                              SizedBox(height: 32.0),
+                              //buttons
+                              Container(
+                                child: Column(children: [
+                                  ElevatedButton(
+                                      onPressed: () => runApp(HomePage()),
+                                      child: Text("Login",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .button)),
+                                  SizedBox(height: 12.0),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Text("Don't have an account?",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyText2),
+                                      SizedBox(width: 5.0),
+                                      InkWell(
+                                          onTap: () {
+                                            Navigator.of(context)
+                                                .pushNamed("Register");
+                                          },
+                                          child: Text("Register",
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .subtitle2))
+                                    ],
+                                  )
+                                ]),
+                              ),
+                            ]),
+                      )))),
+        ),
       )),
     );
   }
