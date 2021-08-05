@@ -5,12 +5,11 @@ class GetThemes {
   static TextTheme getTextTheme(accentColor, secondaryColor, btnTxtColor) =>
       TextTheme(
         headline1: TextStyle(
-            fontFamily: "Montserrat",
-            fontSize: 80.0,
-            fontWeight: FontWeight.w300,
-            color: accentColor),
-        headline2: TextStyle(fontSize: 60.0, fontWeight: FontWeight.w300),
-        headline3: TextStyle(fontSize: 48.0, fontWeight: FontWeight.w400),
+            fontSize: 80.0, fontWeight: FontWeight.w300, color: accentColor),
+        headline2: TextStyle(
+            fontSize: 60.0, fontWeight: FontWeight.w300, color: accentColor),
+        headline3: TextStyle(
+            fontSize: 48.0, fontWeight: FontWeight.w400, color: accentColor),
         headline4: TextStyle(fontSize: 34.0, fontWeight: FontWeight.w400),
         headline5: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w400),
         subtitle1: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400),
