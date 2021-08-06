@@ -6,12 +6,12 @@ import '../../../responsive.dart';
 import '../../../interfaces/components/sideMenu.dart';
 import 'homeBody.dart';
 
-class HomeMain extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _HomeMainState createState() => _HomeMainState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _HomeMainState extends State<HomeMain> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     /// allows to know the height and width of the device
