@@ -16,12 +16,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-  //Size deviceSize = MediaQuery.of(context).size;
   Widget build(BuildContext context) => ChangeNotifierProvider(
-
-      /// allows to know the height and width of the device
       create: (context) => ThemeProvider(),
       builder: (context, _) {
+        Size deviceSize = MediaQuery.of(context).size;
         final themeProvider = Provider.of<ThemeProvider>(context);
         return new MaterialApp(
             debugShowCheckedModeBanner: false,
@@ -34,20 +32,21 @@ class _HomePageState extends State<HomePage> {
               "Home": (BuildContext context) => new HomePage()
             },
             home: Scaffold(
-                appBar: AppBar(
-                  title: Text("Home page"),
-                  //backgroundColor: Theme.of(context).canvasColor,
-                  actions: <Widget>[ThemeSwitch()],
-                ),
-                body: Row(children: <Widget>[
+              body: Responsive(
+                key: UniqueKey(),
+                mobile: Container(),
+                tablet: Container(),
+                desktop: Row(children: <Widget>[
                   Expanded(
-                    //flex: deviceSize.width > 1000 ? 2 : 4,
+                    flex: deviceSize.width > 1000 ? 2 : 4,
                     child: SideMenu(),
                   ),
                   Expanded(
-                    //flex: deviceSize.width > 1000 ? 8 : 10,
+                    flex: deviceSize.width > 1000 ? 8 : 10,
                     child: HomeBody(),
                   )
-                ])));
+                ]),
+              ),
+            ));
       });
 }

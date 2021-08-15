@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:alevelcoursework/assets/constants.dart' as constants;
+import '../../constants.dart' as constants;
 
 import 'GetThemes.dart';
 

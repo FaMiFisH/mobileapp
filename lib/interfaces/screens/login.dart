@@ -2,6 +2,7 @@ import 'package:alevelcoursework/interfaces/components/themeSwitch.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../homeMain.dart';
 import '../../themes/themes.dart';
 import 'home/home.dart';
 
@@ -194,7 +195,7 @@ class _LoginPageState extends State<LoginPage> {
                                         child: Column(children: [
                                           ElevatedButton(
                                               onPressed: () =>
-                                                  runApp(HomePage()),
+                                                  runApp(HomeMain()),
                                               child: Text("Login",
                                                   style: Theme.of(context)
                                                       .textTheme

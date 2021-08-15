@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../homeMain.dart';
 import 'home/home.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -259,7 +260,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                     Container(
                                         child: Column(children: <Widget>[
                                       ElevatedButton(
-                                          onPressed: () => runApp(HomePage()),
+                                          onPressed: () => runApp(HomeMain()),
                                           child: Text("Register",
                                               style: Theme.of(context)
                                                   .textTheme

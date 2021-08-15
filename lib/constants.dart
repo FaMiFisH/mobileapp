@@ -16,3 +16,6 @@ const Color d_primaryColorL = const Color(0xFF555555);
 const Color d_primaryColorD = const Color(0xFF203745);
 const Color d_secondaryColorL = const Color(0x346973);
 const Color d_accentColor = const Color(0xFFCFCECC);
+
+/// padding
+const double defaultPadding = 20.0;
