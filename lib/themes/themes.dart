@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../constants.dart' as constants;
+import '../../constants.dart';
 
 import 'GetThemes.dart';
 
@@ -17,95 +17,88 @@ class ThemeProvider extends ChangeNotifier {
 }
 
 class MyThemes {
-  /// light colors
-  static const Color backgroundL = const Color(0xFFFFF7EA);
-  static const Color primaryL = const Color(0xFFFED482);
-  static const Color secondaryL = const Color(0xFFC8243C);
-  static const Color accentL = const Color(0xFF820A2D);
-
-  /// dark colors
-  static const Color backgroundD = const Color(0xFF282C34);
-  static const Color primaryD = const Color(0xFF203745);
-  static const Color secondaryD = const Color(0xFF346973);
-  static const Color accentD = const Color(0xFF03DAC6);
-
   ///-light theme--------------------------------
-  ///
   static final lightThemeData = ThemeData(
       brightness: Brightness.light,
+      colorScheme: ThemeData().colorScheme.copyWith(
+            primary: accent,
+            brightness: Brightness.light,
+          ),
+      canvasColor: l_canvas,
+      primaryColor: accent,
+      primaryColorLight: l_lightBackground,
+      primaryColorDark: l_darkBackground,
+      accentColor: accent,
+      cardColor: l_icon,
+      hintColor: l_hint,
+      shadowColor: l_shadow,
+      hoverColor: l_hover,
+      iconTheme: GetThemes.getIconTheme(l_icon),
+      toggleableActiveColor: accent,
+      fontFamily: "Montserrat",
+      textTheme: GetThemes.getTextTheme(l_heading, l_txt, l_btnTxt),
+      elevatedButtonTheme:
+          GetThemes.getElevatedBtnTheme(l_btn, l_shadow, l_btnTxt),
+      appBarTheme:
+          GetThemes.getAppBarTheme(l_darkBackground, l_heading, l_icon),
+      inputDecorationTheme: GetThemes.getInputDecorationTheme(
+          l_lightBackground, l_hint, l_hover, accent));
+
+  ///-Dark theme------------------------------------------------
+  static final darkThemeData = ThemeData(
+
+      /// brightness
+      brightness: Brightness.dark,
 
       /// colors
-      colorScheme: ColorScheme.light(),
-      canvasColor: backgroundL,
-      primaryColorLight: primaryL,
-      primaryColorDark: secondaryL,
-      accentColor: accentL,
-      cardColor: secondaryL,
-      hintColor: Colors.grey[700],
-      shadowColor: Colors.white,
-      errorColor: Color(0xFFFF0033),
-      toggleableActiveColor: accentL,
+      colorScheme: ThemeData().colorScheme.copyWith(
+            primary: accent,
+            brightness: Brightness.dark,
+          ),
+      canvasColor: d_canvas,
+      primaryColorLight: d_lightBackground,
+      primaryColorDark: d_darkBackground,
+      accentColor: accent,
+      cardColor: d_icon,
+      hintColor: d_hint,
+      shadowColor: d_shadow,
+      errorColor: d_red,
+      toggleableActiveColor: accent,
 
       /// font
       fontFamily: "Montserrat",
 
-      /// text
-      textTheme: GetThemes.getTextTheme(accentL, secondaryL, backgroundL),
+      // text
+      textTheme: GetThemes.getTextTheme(d_heading, d_txt, d_btnTxt),
 
-      /// buttons
-      elevatedButtonTheme: GetThemes.getElevatedBtnTheme(accentL, Colors.white),
+      // buttons
+      buttonColor: d_btn,
+      buttonTheme: null,
+      textButtonTheme: null,
+      elevatedButtonTheme:
+          GetThemes.getElevatedBtnTheme(d_btn, d_shadow, d_btnTxt),
+      outlinedButtonTheme: null,
 
-      /// appbar
-      appBarTheme: GetThemes.getAppBarTheme(Colors.white, secondaryL));
+      // switch
+      switchTheme: null,
 
-  ///-Dark theme------------------------------------------------
-  ///
-  ///
-  static final darkThemeData = ThemeData(
-    /// brightness
-    brightness: Brightness.dark,
+      // checkbox
+      checkboxTheme: null,
 
-    /// colors
-    colorScheme: ColorScheme.dark(),
-    canvasColor: backgroundD,
-    primaryColorLight: primaryD,
-    primaryColorDark: secondaryD,
-    accentColor: accentD,
-    cardColor: null,
-    hintColor: Colors.grey[300],
-    shadowColor: Colors.black,
-    errorColor: Color(0xFFCC0000),
-    toggleableActiveColor: accentD,
+      // cards
+      cardTheme: null,
 
-    /// font
-    fontFamily: "Montserrat",
+      // appBar
+      appBarTheme:
+          GetThemes.getAppBarTheme(d_darkBackground, d_heading, d_icon),
 
-    // text
-    textTheme: GetThemes.getTextTheme(accentD, secondaryD, backgroundD),
+      // scrollbar
+      scrollbarTheme: null,
 
-    // buttons
-    buttonColor: null,
-    buttonTheme: null,
-    textButtonTheme: null,
-    elevatedButtonTheme: GetThemes.getElevatedBtnTheme(accentD, Colors.black),
-    outlinedButtonTheme: null,
+      // floating action button
+      floatingActionButtonTheme: null,
 
-    // switch
-    switchTheme: null,
-
-    // checkbox
-    checkboxTheme: null,
-
-    // cards
-    cardTheme: null,
-
-    // appBar
-    appBarTheme: null,
-
-    // scrollbar
-    scrollbarTheme: null,
-
-    // floating action button
-    floatingActionButtonTheme: null,
-  );
+      // input decoration
+      inputDecorationTheme: GetThemes.getInputDecorationTheme(
+          d_lightBackground, d_hint, d_hover, accent));
 }

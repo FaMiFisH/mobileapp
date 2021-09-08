@@ -6,6 +6,9 @@ import 'interfaces/screens/register.dart';
 import 'package:provider/provider.dart';
 
 import 'interfaces/screens/login.dart';
+import 'mainApp.dart';
+
+import 'constants.dart' as constants;
 
 void main() async {
   runApp(new MyApp());
@@ -19,14 +22,14 @@ class MyApp extends StatelessWidget {
         final themeProvider = Provider.of<ThemeProvider>(context);
         return MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: "A-level Coursework",
+            title: constants.appTitle,
             themeMode: themeProvider.themeMode,
             theme: MyThemes.lightThemeData,
             darkTheme: MyThemes.darkThemeData,
             routes: <String, WidgetBuilder>{
               "Login": (BuildContext context) => new LoginPage(),
               "Register": (BuildContext context) => new RegisterPage(),
-              "Home": (BuildContext context) => new HomePage()
+              "MainApp": (BuildContext context) => new MainApp()
             },
             home: LoginPage());
       });

@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import '../../../responsive.dart';
 import '../../../interfaces/components/sideMenu.dart';
 import '../login.dart';
-import 'homeBody.dart';
+import 'body.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -16,37 +16,24 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-  Widget build(BuildContext context) => ChangeNotifierProvider(
-      create: (context) => ThemeProvider(),
-      builder: (context, _) {
-        Size deviceSize = MediaQuery.of(context).size;
-        final themeProvider = Provider.of<ThemeProvider>(context);
-        return new MaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: "A-level Coursework",
-            themeMode: themeProvider.themeMode,
-            theme: MyThemes.lightThemeData,
-            darkTheme: MyThemes.darkThemeData,
-            routes: <String, WidgetBuilder>{
-              "Login": (BuildContext context) => new LoginPage(),
-              "Home": (BuildContext context) => new HomePage()
-            },
-            home: Scaffold(
-              body: Responsive(
-                key: UniqueKey(),
-                mobile: Container(),
-                tablet: Container(),
-                desktop: Row(children: <Widget>[
-                  Expanded(
-                    flex: deviceSize.width > 1000 ? 2 : 4,
-                    child: SideMenu(),
-                  ),
-                  Expanded(
-                    flex: deviceSize.width > 1000 ? 8 : 10,
-                    child: HomeBody(),
-                  )
-                ]),
-              ),
-            ));
-      });
+  Widget build(BuildContext context) {
+    Size deviceSize = MediaQuery.of(context).size;
+
+    return new Scaffold(
+      body: Responsive(
+        mobile: Container(child: Center(child: Text("mobile"))),
+        tablet: Container(child: Center(child: Text("tablet"))),
+        desktop: Row(children: <Widget>[
+          Expanded(
+            flex: deviceSize.width > 1000 ? 2 : 4,
+            child: Center(child: Text("side menu")),
+          ),
+          Expanded(
+            flex: deviceSize.width > 1000 ? 8 : 10,
+            child: Center(child: Text("home body")),
+          )
+        ]),
+      ),
+    );
+  }
 }

@@ -4,7 +4,7 @@ import 'package:websafe_svg/websafe_svg.dart';
 import '../../constants.dart';
 
 class SideMenuItem extends StatelessWidget {
-  final bool isActive, isHover, showBorder;
+  final bool isActive, showBorder;
   final IconData icon;
   final String title;
   final VoidCallback press;
@@ -12,7 +12,6 @@ class SideMenuItem extends StatelessWidget {
   const SideMenuItem({
     Key? key,
     this.isActive = false,
-    this.isHover = false,
     this.showBorder = true,
     required this.icon,
     required this.title,
@@ -27,9 +26,6 @@ class SideMenuItem extends StatelessWidget {
         onTap: press,
         child: Row(
           children: <Widget>[
-            // (isActive || isHover)
-            //     ? Image(image: AssetImage("assets/logo.png"))
-            //     : SizedBox(width: 15),
             Expanded(
               child: Container(
                 padding: EdgeInsets.only(bottom: 15, right: 5),
@@ -44,7 +40,7 @@ class SideMenuItem extends StatelessWidget {
                   children: [
                     Icon(
                       icon,
-                      color: (isActive || isHover)
+                      color: (isActive)
                           ? Theme.of(context).primaryColorDark
                           : Colors.grey,
                       size: 20.0,
@@ -53,8 +49,7 @@ class SideMenuItem extends StatelessWidget {
                     Text(
                       title,
                       style: TextStyle(
-                        color:
-                            (isActive || isHover) ? Colors.white : Colors.black,
+                        color: (isActive) ? Colors.white : Colors.black,
                       ),
                     ),
                   ],

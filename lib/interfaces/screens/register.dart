@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../homeMain.dart';
+import '../../mainApp.dart';
 import 'home/home.dart';
+import '../../constants.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -85,186 +86,145 @@ class _RegisterPageState extends State<RegisterPage> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: <Widget>[
-                                    Text("Register",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline2),
                                     Container(
-                                        child: TextFormField(
+                                      child: Text("Register",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .headline2),
+                                    ),
+                                    SizedBox(height: 8.0),
+                                    Container(
+                                        child: Column(
+                                      children: [
+                                        Container(
+                                          child: TextFormField(
                                             controller: nameController,
                                             decoration: InputDecoration(
                                                 labelText: "Name",
-                                                labelStyle: TextStyle(
-                                                    color: Theme.of(context)
-                                                        .hintColor),
-                                                focusedBorder:
-                                                    UnderlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                            color: Theme.of(
-                                                                    context)
-                                                                .accentColor)),
-                                                prefixIcon: Icon(
-                                                  Icons.person,
-                                                  color: Theme.of(context)
-                                                      .primaryColorDark,
-                                                ),
+                                                prefixIcon: Icon(Icons.person),
                                                 suffixIcon: nameController
                                                         .text.isNotEmpty
                                                     ? IconButton(
-                                                        icon: Icon(Icons.clear,
-                                                            color: Theme.of(
-                                                                    context)
-                                                                .primaryColorDark),
+                                                        icon: Icon(Icons.clear),
                                                         onPressed: () => {
-                                                              nameController
-                                                                  .clear()
-                                                            })
-                                                    : SizedBox.shrink()))),
-                                    SizedBox(height: 8.0),
-                                    Container(
-                                        child: TextFormField(
-                                      controller: emailController,
-                                      decoration: InputDecoration(
-                                          labelText: "Email",
-                                          labelStyle: TextStyle(
-                                              color:
-                                                  Theme.of(context).hintColor),
-                                          focusedBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                  color: Theme.of(context)
-                                                      .accentColor)),
-                                          prefixIcon: Icon(Icons.email,
-                                              color: Theme.of(context)
-                                                  .primaryColorDark),
-                                          suffixIcon: emailController
-                                                  .text.isNotEmpty
-                                              ? IconButton(
-                                                  icon: Icon(Icons.clear,
-                                                      color: Theme.of(context)
-                                                          .primaryColorDark),
-                                                  onPressed: () =>
-                                                      {emailController.clear()})
-                                              : SizedBox.shrink()),
-                                    )),
-                                    SizedBox(height: 8.0),
-                                    Container(
-                                      child: TextFormField(
-                                        controller: passController,
-                                        decoration: InputDecoration(
-                                            labelText: "Password",
-                                            labelStyle: TextStyle(
-                                                color: Theme.of(context)
-                                                    .hintColor),
-                                            focusedBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    color: Theme.of(context)
-                                                        .accentColor)),
-                                            prefixIcon: Icon(Icons.lock,
-                                                color: Theme.of(context)
-                                                    .primaryColorDark),
-                                            suffixIcon: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              mainAxisSize: MainAxisSize.min,
-                                              children:
-                                                  passController.text.isNotEmpty
+                                                          nameController.clear()
+                                                        },
+                                                      )
+                                                    : SizedBox.shrink()),
+                                          ),
+                                        ),
+                                        SizedBox(height: 8.0),
+                                        Container(
+                                          child: TextFormField(
+                                            controller: emailController,
+                                            decoration: InputDecoration(
+                                                labelText: "Email",
+                                                prefixIcon: Icon(Icons.email),
+                                                suffixIcon: emailController
+                                                        .text.isNotEmpty
+                                                    ? IconButton(
+                                                        icon: Icon(Icons.clear),
+                                                        onPressed: () => {
+                                                          emailController
+                                                              .clear()
+                                                        },
+                                                      )
+                                                    : SizedBox.shrink()),
+                                          ),
+                                        ),
+                                        SizedBox(height: 8.0),
+                                        Container(
+                                          child: TextFormField(
+                                            controller: passController,
+                                            decoration: InputDecoration(
+                                                labelText: "Password",
+                                                prefixIcon: Icon(Icons.lock),
+                                                suffixIcon: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  children: passController
+                                                          .text.isNotEmpty
                                                       ? [
                                                           IconButton(
                                                               icon: Icon(
-                                                                  Icons.clear,
-                                                                  color: Theme.of(
-                                                                          context)
-                                                                      .primaryColorDark),
+                                                                  Icons.clear),
                                                               onPressed: () => {
                                                                     passController
                                                                         .clear()
                                                                   }),
                                                           IconButton(
-                                                              icon: Icon(
-                                                                hidePass
-                                                                    ? Icons
-                                                                        .visibility_off
-                                                                    : Icons
-                                                                        .visibility,
-                                                                color: Theme.of(
-                                                                        context)
-                                                                    .primaryColorDark,
-                                                              ),
+                                                              icon: Icon(hidePass
+                                                                  ? Icons
+                                                                      .visibility_off
+                                                                  : Icons
+                                                                      .visibility),
                                                               onPressed: () =>
                                                                   togglePassVisibility()),
                                                         ]
                                                       : [],
-                                            )),
-                                        obscureText: hidePass,
-                                        enableSuggestions: false,
-                                        autocorrect: false,
-                                      ),
-                                    ),
-                                    SizedBox(height: 8.0),
-                                    Container(
-                                      child: TextFormField(
-                                        controller: confirmPassController,
-                                        decoration: InputDecoration(
-                                            labelText: "Confirm password",
-                                            labelStyle: TextStyle(
-                                                color: Theme.of(context)
-                                                    .hintColor),
-                                            focusedBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    color: Theme.of(context)
-                                                        .accentColor)),
-                                            prefixIcon: Icon(Icons.lock,
-                                                color: Theme.of(context)
-                                                    .primaryColorDark),
-                                            suffixIcon: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              mainAxisSize: MainAxisSize.min,
-                                              children: confirmPassController
-                                                      .text.isNotEmpty
-                                                  ? [
-                                                      IconButton(
-                                                          icon: Icon(
-                                                              Icons.clear,
-                                                              color: Theme.of(
-                                                                      context)
-                                                                  .primaryColorDark),
-                                                          onPressed: () => {
-                                                                confirmPassController
-                                                                    .clear()
-                                                              }),
-                                                      IconButton(
-                                                          icon: Icon(
-                                                            hideConfirmPass
-                                                                ? Icons
-                                                                    .visibility_off
-                                                                : Icons
-                                                                    .visibility,
-                                                            color: Theme.of(
-                                                                    context)
-                                                                .primaryColorDark,
-                                                          ),
-                                                          onPressed: () =>
-                                                              toggleConfirmPassVisibility()),
-                                                    ]
-                                                  : [],
-                                            )),
-                                        obscureText: hideConfirmPass,
-                                        enableSuggestions: false,
-                                        autocorrect: false,
-                                      ),
-                                    ),
-                                    SizedBox(height: 48.0),
+                                                )),
+                                            obscureText: hidePass,
+                                            enableSuggestions: false,
+                                            autocorrect: false,
+                                          ),
+                                        ),
+                                        SizedBox(height: 8.0),
+                                        Container(
+                                          child: TextFormField(
+                                            controller: confirmPassController,
+                                            decoration: InputDecoration(
+                                                labelText: "Confirm Password",
+                                                prefixIcon: Icon(Icons.lock),
+                                                suffixIcon: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  children:
+                                                      confirmPassController
+                                                              .text.isNotEmpty
+                                                          ? [
+                                                              IconButton(
+                                                                  icon: Icon(Icons
+                                                                      .clear),
+                                                                  onPressed:
+                                                                      () => {
+                                                                            confirmPassController.clear()
+                                                                          }),
+                                                              IconButton(
+                                                                  icon: Icon(
+                                                                    hideConfirmPass
+                                                                        ? Icons
+                                                                            .visibility_off
+                                                                        : Icons
+                                                                            .visibility,
+                                                                  ),
+                                                                  onPressed: () =>
+                                                                      toggleConfirmPassVisibility()),
+                                                            ]
+                                                          : [],
+                                                )),
+                                            obscureText: hideConfirmPass,
+                                            enableSuggestions: false,
+                                            autocorrect: false,
+                                          ),
+                                        ),
+                                        SizedBox(height: 48.0),
+                                      ],
+                                    )),
                                     Container(
                                         child: Column(children: <Widget>[
                                       ElevatedButton(
-                                          onPressed: () => runApp(HomeMain()),
-                                          child: Text("Register",
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .button)),
+                                          onPressed: () => Navigator.of(context)
+                                              .pushNamedAndRemoveUntil(
+                                                  "MainApp",
+                                                  (Route<dynamic> route) =>
+                                                      false),
+                                          child: Text("Register")),
                                       SizedBox(height: 12.0),
                                       Row(
                                           mainAxisAlignment:
